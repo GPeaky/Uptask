@@ -1,0 +1,14 @@
+extends partials/layout 
+
+include mixins/createProyect
+
+block Content
+    .contenido-principal
+        h1 #{title}
+
+        if err
+            each errors in err
+                .alerta= errors.text
+        
+        +createProyect(proyect)
+
